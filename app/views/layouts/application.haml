@@ -64,11 +64,6 @@
             %i.arrow.up.icon
           %p#copy © 2017 site.com
     :javascript
-      $('.message .close')
-        .on('click', function() {
-          $(this)
-            .closest('.message')
-            .transition('fade')
-          ;
-        })
-      ;
+      $(".close.icon").click(function(){
+        $(this).parent().hide();
+      });
