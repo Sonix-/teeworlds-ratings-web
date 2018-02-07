@@ -42,9 +42,13 @@
           - link_to_active_page 'About', '/about'
     #page.ui.container
       - if notice
-        .ui.success.message= notice
+        .ui.success.message
+          %i.close.icon
+          = notice
       - if alert
-        .ui.warning.message= alert
+        .ui.warning.message
+          %i.close.icon
+          = alert
       - if user_signed_in?
         .ui.secondary.menu
           .item
