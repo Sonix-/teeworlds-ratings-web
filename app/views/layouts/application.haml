@@ -49,7 +49,7 @@
         .ui.secondary.menu
           = link_to 'Player Profile', player_path(current_user.player.name), :class => "item"
           .right.menu
-            = link_to('Sign out', destroy_user_session_path, :method => :delete)
+            = link_to('Sign out', destroy_user_session_path, :method => :delete, :class => "ui item")
       =yield
     %footer
       .ui.container#foot
