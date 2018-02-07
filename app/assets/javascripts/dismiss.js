@@ -1,8 +1,3 @@
-$('.message .close')
-  .on('click', function() {
-    $(this)
-      .closest('.message')
-      .transition('fade')
-    ;
-  })
-;
+$(".close.icon").click(function(){
+  $(this).parent().hide();
+});
