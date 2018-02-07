@@ -26,6 +26,10 @@ body {
 p {
 	text-align: justify;
 }
+
+pre.ui.inverted.message{
+	white-space: normal;
+}
 /* ######### menu ######### */
 
 #menu {
