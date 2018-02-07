@@ -48,12 +48,10 @@
       - if user_signed_in?
         .ui.secondary.menu
           .item
-            .ui.basic.button
-              = link_to 'Player Profile', player_path(current_user.player.name)
+            = link_to 'Player Profile', player_path(current_user.player.name), :class => "ui basic button"
           .right.menu
             .item
-              .ui.basic.button
-                = link_to('Sign out', destroy_user_session_path, :method => :delete)
+              = link_to('Sign out', destroy_user_session_path, :method => :delete, :class => "ui basic button")
       =yield
     %footer
       .ui.container#foot
