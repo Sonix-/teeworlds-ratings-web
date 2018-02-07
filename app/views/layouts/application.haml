@@ -46,11 +46,12 @@
       - if alert
         .ui.warning.message= alert
       - if user_signed_in?
-        %ul
-          %li
-            = link_to 'Player Profile', player_path(current_user.player.name)
-          %li
-            = link_to('Sign out', destroy_user_session_path, :method => :delete)
+        .ui.secondary.menu
+            %a.item
+                = link_to 'Player Profile', player_path(current_user.player.name)
+            .right.menu
+                #a.ui.item
+                    = link_to('Sign out', destroy_user_session_path, :method => :delete)
       =yield
     %footer
       .ui.container#foot
