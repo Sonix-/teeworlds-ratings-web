@@ -291,6 +291,7 @@ footer {
     padding-top: 35px;
     font-size: 13px;
     font-family: monospace;
+    text-align: center;
 }
 
 /* ######### Pagination ######### */
