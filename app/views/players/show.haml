@@ -1,12 +1,10 @@
 .ui.basic.segment
   = image_tag @player.avatar.url(:medium), class: 'ui small right floated circular image'
 
-  %h3
+  %h2
     = @player.name
     - if @player.country
       = content_tag(:i, '', class: "#{@player.country.downcase} flag")
-
-  %h4= link_to @player.clan.name, clan_path(@player.clan.name) unless @player.clan.nil?
 
   - unless @player.about.nil?
     %h4 About #{@player.name}
@@ -16,15 +14,42 @@
   - if user_signed_in? && @user.id == current_user.id
     - if @player.clan.nil?
       %p= link_to 'Create a clan', new_clan_path
-    %p= "Ingame key: #{@player.secret_key}"
     .ui.horizontal.list
       .item.content= link_to 'Edit user information', edit_user_registration_path
       .item.content= link_to 'Edit player profile', edit_player_path(@player.name)
 
-  %h4 Total games: #{@player.total_games}
-
-  %h4 CTF Rating: #{@player.ctf_rating}
-  %h4 DM Rating: #{@player.dm_rating}
+  .ui.relaxed.list
+    %b.item
+      = link_to @player.clan.name, clan_path(@player.clan.name) unless @player.clan.nil?
+    .item
+      %b Lvl.
+      .ui.circular.blue.basic.label
+        50
+    .item
+      %b Position
+      Allrounder
+    .item
+      %b CTF Rating:
+      #{@player.ctf_rating}
+    .item
+      %b DM Rating:
+      #{@player.dm_rating}
+    .item
+      %b Ingame key:
+      %p.ui.blue.label
+        #{@player.secret_key}
+    .item
+      %b Time spent on Ranked servers:
+      Time
+    .item
+      %b Total games:
+      #{@player.total_games}
+    .item
+      %b Total CGs played:
+      245
+    .item
+      %b Registered since:
+      11/11/11
 
 %h4 Overall stats
 
