@@ -34,10 +34,11 @@
     .item
       %b DM Rating:
       #{@player.dm_rating}
-    .item
-      %b Ingame key:
-      %p.ui.blue.label
-        #{@player.secret_key}
+    - if user_signed_in? && @user.id == current_user.id
+      .item
+        %b Ingame key:
+        %p.ui.blue.label
+          #{@player.secret_key}
     .item
       %b Time spent on Ranked servers:
       Time
