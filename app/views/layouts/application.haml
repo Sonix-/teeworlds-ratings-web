@@ -58,8 +58,7 @@
                 %i.dropdown.icon
                 .menu
                   = link_to 'Account Settings', edit_user_registration_path, :class => "item"
-                  .item
-                    Edit player profile
+                  = link_to 'Edit Player profile', edit_player_path(current_user.player.name), :class => "item"
                   .item
                     = link_to('Sign out', destroy_user_session_path, :method => :delete, :class => "red text")
       =yield
