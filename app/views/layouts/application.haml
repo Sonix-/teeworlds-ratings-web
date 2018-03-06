@@ -49,7 +49,7 @@
         .ui.warning.message
           %i.close.icon
           = alert
-      - if user_signed_in?
+      - if user_signed_in? && @user.id == current_user.id
         .ui.secondary.menu
           .item
             .ui.basic.buttons
