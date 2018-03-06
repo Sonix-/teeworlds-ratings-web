@@ -52,17 +52,24 @@
       - if user_signed_in?
         .ui.secondary.menu
           .item
-            = link_to 'Player Profile', player_path(current_user.player.name), :class => "ui basic button"
-          .right.menu
-            .item
-              = link_to('Sign out', destroy_user_session_path, :method => :delete, :class => "ui basic button")
+            .ui.basic.buttons
+              = link_to current_user.player.name, player_path(current_user.player.name), :class => "ui basic button"
+              .ui.icon.top.left.pointing.dropdown.button
+                %i.dropdown.icon
+                .menu
+                  .item
+                    = link_to 'Account Settings', edit_user_registration_path
+                  .item
+                    = link_to 'Edit Player profile', edit_player_path(@player.name)
+                  .item
+                    = link_to('Sign out', destroy_user_session_path, :method => :delete, :class => "red text")
       =yield
     %footer
       .ui.container#foot
         .center.aligned.column
           %a.ui.inverted.icon.basic.button{"data-position" => "bottom center", "data-tooltip" => "Back to Top", :href => "#"}
             %i.arrow.up.icon
-          %p#copy © 2017 site.com
+          %p#copy © 2018 site.com
     :javascript
       $(".close.icon").click(function(){
         $(this).parent().hide();
