@@ -49,7 +49,7 @@
         .ui.warning.message
           %i.close.icon
           = alert
-      - if user_signed_in? && @user.id == current_user.id
+      - if user_signed_in?
         .ui.secondary.menu
           .item
             .ui.basic.buttons
@@ -60,7 +60,7 @@
                   .item
                     = link_to 'Account Settings', edit_user_registration_path
                   .item
-                    = link_to 'Edit Player profile', edit_player_path(@player.name)
+                    Edit player profile
                   .item
                     = link_to('Sign out', destroy_user_session_path, :method => :delete, :class => "red text")
       =yield
