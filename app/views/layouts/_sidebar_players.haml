@@ -1,0 +1,39 @@
+%table.ui.celled.unstackable.table
+  %thead
+    %tr
+      %th{:colspan => 4} Player Rankings
+    %tr
+      %th #
+      %th Name
+      %th Clan
+      %th Rating
+  %tbody.tab-content.current#dm
+    /- @players.each_index do |i|
+      %tr
+        %td 1
+        %td nick
+        %td clan
+        %td dm_rating
+  %tbody.tab-content#ctf
+    /- @players.each_index do |i|
+      %tr
+        %td 1
+        %td name
+        %td clan
+        %td ctf.rating
+  %tbody.tab-content#global
+    /- @players.each_index do |i|
+      %tr
+        %td 1
+        %td name
+        %td clan
+        %td global.rating
+  %tfoot
+    %tr
+      %th{:colspan => 2}
+        .ui.tiny.left.floated.pagination.menu.ranks
+          %a.item.active{'data-tab' => 'dm'}DM
+          %a.item{'data-tab' => 'ctf'}CTF
+          %a.item{'data-tab' => 'global'}GLB
+      %th{:colspan => 4}
+        %a.ui.tiny.right.floated.small.primary.button.current#btn View all

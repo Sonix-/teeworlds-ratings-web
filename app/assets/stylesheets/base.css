@@ -222,38 +222,6 @@ ol.ui.list > li:first-child:after,
 	padding-left: 20px;
 }
 
-/* ######### downloads ######### */
-
-#main .download_item {
-	padding: 20px 20px 40px;
-	overflow: hidden;
-}
-
-#main .download_title {
-	margin-bottom: 10px;
-}
-
-#main .download_options {
-	font-size: 10px;
-	line-height: 14px;
-	width: 170px;
-	margin-left: 20px;
-	float: right;
-}
-
-#main .download_options ul {
-	list-style-type: none;
-}
-
-#main .download_notes {}
-
-#main .download_notes h3 {
-	margin-bottom: 5px;
-}
-
-#main .download_notes ul {
-	padding-left: 20px;
-}
 
 /* ######### sidebar ######### */
 
@@ -272,6 +240,14 @@ ol.ui.list > li:first-child:after,
 	color: #858358;
 	font-size: 14px;
 	font-weight: bold;
+}
+
+.tab-content {
+	display: none !important;
+}
+
+.tab-content.current{
+	display: table-row-group !important;
 }
 
 
