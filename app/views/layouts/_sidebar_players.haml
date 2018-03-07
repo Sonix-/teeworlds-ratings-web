@@ -8,21 +8,18 @@
       %th Clan
       %th Rating
   %tbody.tab-content.current#dm
-    /- @players.each_index do |i|
     %tr
       %td 1
       %td nick
       %td clan
       %td dm_rating
   %tbody.tab-content#ctf
-    /- @players.each_index do |i|
-      %tr
+    %tr
       %td 1
       %td name
       %td clan
       %td ctf.rating
   %tbody.tab-content#global
-    /- @players.each_index do |i|
     %tr
       %td 1
       %td name
