@@ -2,7 +2,7 @@
 
 = simple_form_for @player, url: player_path(@player.name), html: {class: 'ui form'} do |f|
   .field= f.input_label :about
-  = f.input_field :about
+    = f.input_field :about
   .field= f.input_field :country
   .field= f.input_field :avatar, as: :file
   = f.button :submit, 'Submit', class: 'ui blue submit button'
