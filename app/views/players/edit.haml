@@ -3,7 +3,7 @@
 = simple_form_for @player, url: player_path(@player.name), html: {class: 'ui form'} do |f|
   = f.input :about, label: 'About',
     wrapper: :semantic
-  = f.input :country, label: 'Country', input_html: { class="ui fluid search dropdown" },
+  = f.input :country, label: 'Country', input_html: { class: 'ui fluid search dropdown' },
     wrapper: :semantic
   = f.input :avatar, label: 'Avatar', as: :file,
     wrapper: :semantic
